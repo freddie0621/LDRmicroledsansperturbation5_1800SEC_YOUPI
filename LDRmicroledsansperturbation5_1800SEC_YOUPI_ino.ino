@@ -153,7 +153,8 @@ MCUSR &= ~(1<<WDRF);
 WDTCR |= (1<<WDCE) | (1<<WDE);
 // set new watchdog timeout value
 WDTCR = bb;
-WDTCR |= _BV(WDTIE);
+WDTCR |= _BV(WDTIE);// attiny 13
+//WDTCR |= _BV(WDTE);// attiny 85
 }
  
 // Watchdog Interrupt Service / is executed when watchdog timed out
